@@ -4,7 +4,7 @@ Given a sample data matrix that indicates the sample name, sample folder name an
 this script can write out pipeline commands to run MiXCR on the cluster and post process the
 data.
 
-Erase this: Test jira tagging a commit message.
+Erase this: Test jira tagging a commit message2.
 
 ## Assembling this package
 In R:
