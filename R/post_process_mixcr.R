@@ -90,9 +90,10 @@ post_process_mixcr = function(
     my_path = input_file_paths[grep(paste0("/", folder_name, "/"), input_file_paths, fixed = T)]
     
     nt_dt = fread(my_path, data.table = F, 
-                  select = c("cloneCount", "Chains", "aaSeqCDR3", "nSeqCDR3","bestVHit", "bestJHit", 
+                  select = c("cloneCount", "aaSeqCDR3", "nSeqCDR3","bestVHit", "bestJHit", 
                              "allVHitsWithScore", "allJHitsWithScore"))
-    names(nt_dt) = c("Count", "Chain", "aaCDR3","ntCDR3", "Top_V", "Top_J", "All_V", "All_J")
+    nt_dt$Chain = substring(nt_dt$bestVHit , 1, 3)
+    names(nt_dt) = c("Count", "aaCDR3","ntCDR3", "Top_V", "Top_J", "All_V", "All_J", "Chain")
     
     nt_dt %<>% run_common_clone_steps()
     
