@@ -9,7 +9,7 @@ Erase this: Test jira tagging a commit message3.
 ## Assembling this package
 In R:
 ``` r
-housekeeping::assemble_package(package_name = "MiXCR", my_version = "0.0-06",
+housekeeping::assemble_package(package_name = "MiXCR", my_version = "0.0-07",
   my_dir = "/datastore/alldata/shiny-server/rstudio-common/dbortone/packages/MiXCR")
 ```
 
@@ -19,7 +19,7 @@ In bash:
 cd /datastore/alldata/shiny-server/rstudio-common/dbortone/packages/MiXCR
 my_comment="Added chain column."
 git commit -am "$my_comment"; git push origin master
-git tag -a 0.0-04 -m "$my_comment"; git push -u origin --tags
+git tag -a 0.0-07 -m "$my_comment"; git push -u origin --tags
 ```
 
 ## Install
@@ -31,5 +31,5 @@ devtools::install_bitbucket("BGV_DBortone/MiXCR")
 
 Or for a specific version:
 ``` r
-devtools::install_bitbucket("BGV_DBortone/MiXCR", ref = "0.0-04")
+devtools::install_bitbucket("BGV_DBortone/MiXCR", ref = "0.0-07")
 ```
