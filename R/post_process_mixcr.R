@@ -82,7 +82,7 @@ post_process_mixcr = function(
   
   # a("Get the files in a common format, not really needed since everything is done with MiXCR, ", 
   #   "but this makes it match up with the diversity extraction step.")
-  my_mclapply_output = mclapply(input_file_paths[1:100], function(input_file_path){
+  my_mclapply_output = mclapply(input_file_paths, function(input_file_path){
     output_list = list()
     
     folder_name = basename(dirname(input_file_path))
