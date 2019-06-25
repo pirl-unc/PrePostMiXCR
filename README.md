@@ -4,7 +4,7 @@ Given a sample data matrix that indicates the sample name, sample folder name an
 this script can write out pipeline commands to run MiXCR on the cluster and post process the
 data.
 
-Erase this: Test jira tagging a commit message2.
+Erase this: Test jira tagging a commit message3.
 
 ## Assembling this package
 In R:
@@ -26,10 +26,10 @@ git tag -a 0.0-04 -m "$my_comment"; git push -u origin --tags
 Restart R
 In R (local library, packrat library):
 ``` r
-devtools::install_bitbucket("DanteBortone/MiXCR")
+devtools::install_bitbucket("BGV_DBortone/MiXCR")
 ```
 
 Or for a specific version:
 ``` r
-devtools::install_bitbucket("DanteBortone/MiXCR", ref = "0.0-04")
+devtools::install_bitbucket("BGV_DBortone/MiXCR", ref = "0.0-04")
 ```
