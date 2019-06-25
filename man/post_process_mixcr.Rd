@@ -20,8 +20,6 @@ post_process_mixcr(input_file_paths, output_dir, sample_data_path,
 \item{sample_id_column}{The name of the column that has sample ids}
 
 \item{thread_num}{Integer number of threads to run mclapply statements}
-
-\item{gene_biotypes}{The type of biomaRt gene_biotypes that should be output to the gene level output.}
 }
 \value{
 A path to the rds file.
@@ -35,4 +33,3 @@ and outputs the gene level counts.
 post_process_mixcr
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 }
-\concept{mart}

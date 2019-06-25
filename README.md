@@ -9,7 +9,7 @@ Erase this: Test jira tagging a commit message3.
 ## Assembling this package
 In R:
 ``` r
-housekeeping::assemble_package(package_name = "MiXCR", my_version = "0.0-04",
+housekeeping::assemble_package(package_name = "MiXCR", my_version = "0.0-05",
   my_dir = "/datastore/alldata/shiny-server/rstudio-common/dbortone/packages/MiXCR")
 ```
 
@@ -17,7 +17,7 @@ housekeeping::assemble_package(package_name = "MiXCR", my_version = "0.0-04",
 In bash:
 ``` bash
 cd /datastore/alldata/shiny-server/rstudio-common/dbortone/packages/MiXCR
-my_comment="Added post_process_mixcr to namespace."
+my_comment="Learned you can't used the #apostrophe command for nomral comments without confusing roxygen.  got rid of those..."
 git commit -am "$my_comment"; git push origin master
 git tag -a 0.0-04 -m "$my_comment"; git push -u origin --tags
 ```

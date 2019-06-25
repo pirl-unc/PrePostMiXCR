@@ -1,8 +1,7 @@
-
 #' ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #' post_process_mixcr
 #' ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-#' @title post_process_mixcr 
+#' @title post_process_mixcr
 #' 
 #' @description 
 #' Joins individual sample files into one tsv file.  Also converts ucsc names to hgnc_symbol|entrez_ids
@@ -11,25 +10,17 @@
 #' @param input_file_paths Character vector of paths to the pipeline output data. 
 #' @param output_dir Path to the output folder.
 #' @param sample_data_path Path to the sample data which should contatin the sample_id_column and sample_folder_column
-#' @param gene_biotypes The type of biomaRt gene_biotypes that should be output to the gene level output.
 #' @param sample_folder_column The name of the column that has sample folder names
 #' @param sample_id_column The name of the column that has sample ids
 #' @param thread_num Integer number of threads to run mclapply statements
 #' 
 #' @return A path to the rds file.
 #' 
-#' @family mart
-#' 
 #' @export
 post_process_mixcr = function(
-  # this_script_path = get_script_dir_path(include_file_name = T)
-  # init_path = find_file_along_path(this_script_path, "_init.R")
-  # source(init_path)
-  # base_dir = dirname(init_path)
-  
-  input_file_paths,# = system(paste0("ls ", RAW_DATA_DIR, "/pipeline_output/star_salmon/*/*_quant.sf"), intern = TRUE)
-  output_dir,# = file.path(base_dir, "post_processing", "star_salmon")
-  sample_data_path,# = file.path(base_dir, "sample_data", "sample_data.tsv")
+  input_file_paths,
+  output_dir,
+  sample_data_path,
   my_chains = my_chains,
   sample_folder_column = "Sample_Folder",
   sample_id_column = "Sample_ID",
@@ -136,7 +127,7 @@ post_process_mixcr = function(
     j_dt = j_dt[order(j_dt$Count, decreasing = T), ]
     
     total_abundance = sum(nt_dt$Count)
-     
+    
     output_list = list()
     message(sample_name)
     output_list["Sample_ID"] = sample_name
@@ -148,9 +139,9 @@ post_process_mixcr = function(
       output_list[paste0(my_chain,"_Abundance")] = my_abundance
       output_list[paste0(my_chain,"_Fraction")] = my_abundance/total_abundance
       
-      #' https://www.biorxiv.org/content/biorxiv/early/2019/06/14/665612.full.pdf
-      #' TCR convergence was calculated as the aggregate frequency of clones sharing a variable gene 
-      #' (excluding allele information) and CDR3AA sequence with at least one other identified clone.
+      # https://www.biorxiv.org/content/biorxiv/early/2019/06/14/665612.full.pdf
+      # TCR convergence was calculated as the aggregate frequency of clones sharing a variable gene 
+      # (excluding allele information) and CDR3AA sequence with at least one other identified clone.
       my_richness = nrow(chain_df)
       if(my_richness > 1){
         repeat_aacdr3_counts = summary(factor(chain_df$aaCDR3),  maxsum = Inf)
@@ -158,7 +149,7 @@ post_process_mixcr = function(
       } else {
         output_list[paste0(my_chain,"_Convergence")] = NA
       }
-
+      
     }
     
     list_dts = list(nt_dt, aa_dt, v_dt, j_dt)

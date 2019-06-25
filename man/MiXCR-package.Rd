@@ -14,7 +14,7 @@ are handled at this time.
 \seealso{
 Useful links:
 \itemize{
-  \item Report bugs at \url{https://github.com/DanteBortone/MiXCR/issues}
+  \item Report bugs at \url{https://bitbucket.org/BGV_DBortone/mixcr/issues}
 }
 
 }
