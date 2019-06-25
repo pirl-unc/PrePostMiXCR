@@ -1,8 +1,8 @@
 
 #' ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-#' post_process_star_salmon
+#' post_process_mixcr
 #' ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-#' @title post_process_star_salmon 
+#' @title post_process_mixcr 
 #' 
 #' @description 
 #' Joins individual sample files into one tsv file.  Also converts ucsc names to hgnc_symbol|entrez_ids

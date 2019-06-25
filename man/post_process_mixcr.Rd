@@ -2,7 +2,7 @@
 % Please edit documentation in R/post_process_mixcr.R
 \name{post_process_mixcr}
 \alias{post_process_mixcr}
-\title{post_process_star_salmon}
+\title{post_process_mixcr}
 \usage{
 post_process_mixcr(input_file_paths, output_dir, sample_data_path,
   my_chains = my_chains, sample_folder_column = "Sample_Folder",
@@ -32,7 +32,7 @@ and outputs the gene level counts.
 }
 \details{
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-post_process_star_salmon
+post_process_mixcr
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 }
 \concept{mart}
