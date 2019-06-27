@@ -4,7 +4,7 @@ Given a sample data matrix that indicates the sample name, sample folder name an
 this script can write out pipeline commands to run MiXCR on the cluster and post process the
 data.
 
-Erase this: Test jira tagging a commit message4.
+Erase this: Test jira tagging a commit message 5.
 
 ## Assembling this package
 In R:
@@ -17,7 +17,7 @@ housekeeping::assemble_package(package_name = "MiXCR", my_version = "0.0-08",
 In bash:
 ``` bash
 cd /datastore/alldata/shiny-server/rstudio-common/dbortone/packages/MiXCR
-my_comment="Got rid of 1:100 in input_paths."
+my_comment="VL-61 #time 1m Total work logged #close #comment J testing a post of comments through smart commit 5..."
 git commit -am "$my_comment"; git push origin master
 git tag -a 0.0-08 -m "$my_comment"; git push -u origin --tags
 ```
