@@ -17,7 +17,7 @@ housekeeping::assemble_package(package_name = "MiXCR", my_version = "0.0-08",
 In bash:
 ``` bash
 cd /datastore/alldata/shiny-server/rstudio-common/dbortone/packages/MiXCR
-my_comment="VL-61 #time 1m Total work logged #close #comment J testing a post of comments through smart commit 5..."
+my_comment="VL-61 #time 1m Total work logged #close #comment J testing a post of comments through smart commit 6..."
 git commit -am "$my_comment"; git push origin master
 git tag -a 0.0-08 -m "$my_comment"; git push -u origin --tags
 ```
