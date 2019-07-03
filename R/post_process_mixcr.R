@@ -9,7 +9,7 @@
 #' 
 #' @param input_file_paths Character vector of paths to the pipeline output data. 
 #' @param output_dir Path to the output folder.
-#' @param sample_data_path Path to the sample data which should contatin the sample_id_column and sample_folder_column
+#' @param sample_data_table Data table which should contatin the sample_id_column and sample_folder_column
 #' @param sample_folder_column The name of the column that has sample folder names
 #' @param sample_id_column The name of the column that has sample ids
 #' @param thread_num Integer number of threads to run mclapply statements
@@ -20,7 +20,7 @@
 post_process_mixcr = function(
   input_file_paths,
   output_dir,
-  sample_data_path,
+  sample_data_table,
   my_chains = my_chains,
   sample_folder_column = "Sample_Folder",
   sample_id_column = "Sample_ID",
@@ -73,9 +73,18 @@ post_process_mixcr = function(
   a("Chain abundance and fraction are the same across NT, AA, VRegion, and JRegion")
   a("")
   
-  sample_dat = fread(sample_data_path, data.table = F, select = c(sample_id_column, sample_folder_column))
-  sample_lut = sample_dat[[sample_id_column]]
-  names(sample_lut) = sample_dat[[sample_folder_column]]
+  
+  # sample_data_table = fread(sample_data_path, data.table = F, select = c(sample_id_column, sample_folder_column))
+  if(sample_id_column %ni% names(sample_data_table)){
+    error(paste0(sample_id_column, " was not found in sample_data_table."))
+  }
+  
+  if(sample_folder_column %ni% names(sample_data_table)){
+    error(paste0(sample_folder_column, " was not found in sample_data_table."))
+  }
+  
+  sample_lut = sample_data_table[[sample_id_column]]
+  names(sample_lut) = sample_data_table[[sample_folder_column]]
   
   
   column_output_order = c("Chain", "Count", "aaCDR3", "ntCDR3", "Length", "All_V", "All_J", "Top_V", "Top_J")

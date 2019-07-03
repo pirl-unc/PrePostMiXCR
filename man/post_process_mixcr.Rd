@@ -4,7 +4,7 @@
 \alias{post_process_mixcr}
 \title{post_process_mixcr}
 \usage{
-post_process_mixcr(input_file_paths, output_dir, sample_data_path,
+post_process_mixcr(input_file_paths, output_dir, sample_data_table,
   my_chains = my_chains, sample_folder_column = "Sample_Folder",
   sample_id_column = "Sample_ID", thread_num = 1)
 }
@@ -13,7 +13,7 @@ post_process_mixcr(input_file_paths, output_dir, sample_data_path,
 
 \item{output_dir}{Path to the output folder.}
 
-\item{sample_data_path}{Path to the sample data which should contatin the sample_id_column and sample_folder_column}
+\item{sample_data_table}{Data table which should contatin the sample_id_column and sample_folder_column}
 
 \item{sample_folder_column}{The name of the column that has sample folder names}
 

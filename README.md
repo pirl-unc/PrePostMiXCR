@@ -9,7 +9,7 @@ Erase this: Test jira tagging a commit message 5.
 ## Assembling this package
 In R:
 ``` r
-housekeeping::assemble_package(package_name = "MiXCR", my_version = "0.0-08",
+housekeeping::assemble_package(package_name = "MiXCR", my_version = "0.0-09",
   my_dir = "/datastore/alldata/shiny-server/rstudio-common/dbortone/packages/MiXCR")
 ```
 
@@ -17,9 +17,9 @@ housekeeping::assemble_package(package_name = "MiXCR", my_version = "0.0-08",
 In bash:
 ``` bash
 cd /datastore/alldata/shiny-server/rstudio-common/dbortone/packages/MiXCR
-my_comment="VL-61 #time 1m Total work logged #close #comment J testing a post of comments through smart commit 6..."
+my_comment="VL-61 #time 10m Total work logged #close #comment Changed sample_data_path to sample_data_table."
 git commit -am "$my_comment"; git push origin master
-git tag -a 0.0-08 -m "$my_comment"; git push -u origin --tags
+git tag -a 0.0-09 -m "$my_comment"; git push -u origin --tags
 ```
 
 ## Install
@@ -31,5 +31,5 @@ devtools::install_bitbucket("BGV_DBortone/MiXCR")
 
 Or for a specific version:
 ``` r
-devtools::install_bitbucket("BGV_DBortone/MiXCR", ref = "0.0-08")
+devtools::install_bitbucket("BGV_DBortone/MiXCR", ref = "0.0-09")
 ```
