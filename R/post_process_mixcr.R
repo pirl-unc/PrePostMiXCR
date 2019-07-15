@@ -111,7 +111,7 @@ post_process_mixcr = function(
     if(!is.na(sample_name)){
       my_path = input_file_paths[grep(paste0("/", folder_name, "/"), input_file_paths, fixed = T)]
       
-      if(length(readLines(my_path)) > 0){
+      if(length(readLines(my_path)) > 1){
         nt_dt = fread(my_path, data.table = F, 
                       select = c("cloneCount", "aaSeqCDR3", "nSeqCDR3","bestVHit", "bestJHit", 
                                  "allVHitsWithScore", "allJHitsWithScore"))

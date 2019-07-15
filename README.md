@@ -9,7 +9,7 @@ Erase this: Test jira tagging a commit message 5.
 ## Assembling this package
 In R:
 ``` r
-housekeeping::assemble_package(package_name = "MiXCR", my_version = "0.0-10",
+housekeeping::assemble_package(package_name = "MiXCR", my_version = "0.0-11",
   my_dir = "/datastore/alldata/shiny-server/rstudio-common/dbortone/packages/MiXCR")
 ```
 
@@ -17,7 +17,7 @@ housekeeping::assemble_package(package_name = "MiXCR", my_version = "0.0-10",
 In bash:
 ``` bash
 cd /datastore/alldata/shiny-server/rstudio-common/dbortone/packages/MiXCR
-my_comment="VL-82 #comment Improved readme documentation output by post_process_mixcr."
+my_comment="VL-95 #close #comment Changed number of lines required to proceed to 1."
 git commit -am "$my_comment"; git push origin master
 git tag -a 0.0-10 -m "$my_comment"; git push -u origin --tags
 ```
