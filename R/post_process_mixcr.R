@@ -102,7 +102,7 @@ post_process_mixcr = function(
   
   # a("Get the files in a common format, not really needed since everything is done with MiXCR, ", 
   #   "but this makes it match up with the diversity extraction step.")
-  my_mclapply_output = mclapply(input_file_paths, function(input_file_path){
+  my_mclapply_output = parallel::mclapply(input_file_paths, function(input_file_path){
     output_list = list()
     
     folder_name = basename(dirname(input_file_path))
@@ -219,7 +219,8 @@ post_process_mixcr = function(
   }, mc.cores = 1)
   
   dat = rbindlist(my_mclapply_output, use.names = T, fill = T)
-  # now do gene level counts
+  
+  dat = dat[!is.na(dat$Sample_ID), ]
   
   fwrite(dat, file.path(output_dir, "diversity_data.tsv"), sep = "\t")
 }

@@ -9,7 +9,7 @@ Erase this: Test jira tagging a commit message 5.
 ## Assembling this package
 In R:
 ``` r
-housekeeping::assemble_package(package_name = "MiXCR", my_version = "0.0-11",
+housekeeping::assemble_package(package_name = "MiXCR", my_version = "0.0-12",
   my_dir = "/datastore/alldata/shiny-server/rstudio-common/dbortone/packages/MiXCR")
 ```
 
@@ -17,9 +17,9 @@ housekeeping::assemble_package(package_name = "MiXCR", my_version = "0.0-11",
 In bash:
 ``` bash
 cd /datastore/alldata/shiny-server/rstudio-common/dbortone/packages/MiXCR
-my_comment="VL-95 #close #comment Changed number of lines required to proceed to 1."
+my_comment="VL-95 #comment Dropped samples with no cdr3 reads reported."
 git commit -am "$my_comment"; git push origin master
-git tag -a 0.0-10 -m "$my_comment"; git push -u origin --tags
+git tag -a 0.0-12 -m "$my_comment"; git push -u origin --tags
 ```
 
 ## Install
@@ -31,5 +31,5 @@ devtools::install_bitbucket("unc_lineberger/MiXCR")
 
 Or for a specific version:
 ``` r
-devtools::install_bitbucket("unc_lineberger/MiXCR", ref = "0.0-10")
+devtools::install_bitbucket("unc_lineberger/MiXCR", ref = "0.0-12")
 ```
