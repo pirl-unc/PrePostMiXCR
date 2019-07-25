@@ -9,7 +9,7 @@ Erase this: Test jira tagging a commit message 5.
 ## Assembling this package
 In R:
 ``` r
-housekeeping::assemble_package(package_name = "MiXCR", my_version = "0.0-12",
+housekeeping::assemble_package(package_name = "MiXCR", my_version = "0.0-13",
   my_dir = "/datastore/alldata/shiny-server/rstudio-common/dbortone/packages/MiXCR")
 ```
 

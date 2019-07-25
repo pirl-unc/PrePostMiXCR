@@ -8,7 +8,7 @@
 #' and outputs the gene level counts.
 #' 
 #' @param input_file_paths Character vector of paths to the pipeline output data. 
-#' @param output_dir Path to the output folder.
+#' @param output_path Path to the output file
 #' @param sample_data_table Data table which should contatin the sample_id_column and sample_folder_column
 #' @param sample_folder_column The name of the column that has sample folder names
 #' @param sample_id_column The name of the column that has sample ids
@@ -19,7 +19,7 @@
 #' @export
 post_process_mixcr = function(
   input_file_paths,
-  output_dir,
+  output_path,
   sample_data_table,
   my_chains = my_chains,
   sample_folder_column = "Sample_Folder",
@@ -27,6 +27,9 @@ post_process_mixcr = function(
   thread_num = 1
 ){
   library(binfotron)
+  
+  output_dir = dirname(output_path)
+  if(!dir.exists(output_dir)) dir.create(output_dir)
   
   run_common_clone_steps = function(this_df){
     # drop incomplete sequences
@@ -222,5 +225,8 @@ post_process_mixcr = function(
   
   dat = dat[!is.na(dat$Sample_ID), ]
   
-  fwrite(dat, file.path(output_dir, "diversity_data.tsv"), sep = "\t")
+  my_sep = "\t"
+  if(grepl(".csv$", output_path)) my_sep = ","
+
+  fwrite(dat, output_path, sep = my_sep)
 }
