@@ -17,7 +17,7 @@ input_file_paths = system(paste0("ls ", RAW_DATA_DIR, "/mixcr/sample_output/*/*_
 
 my_chains = c( "IGH", "IGK", "IGL", "TRA", "TRB", "TRD", "TRG")
 
-if(!"PrePostMiXCR" %in% rownames(installed.packages()))
+if(!("PrePostMiXCR" %in% rownames(installed.packages())))
   devtools::install_bitbucket("unc_lineberger/PrePostMiXCR")
   
 PrePostMiXCR::post_process_mixcr(
