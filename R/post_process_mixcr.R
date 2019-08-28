@@ -66,7 +66,7 @@ post_process_mixcr = function(
     message(my_output)
   }
   
-  a("Post processing MiXCR diversity using MiXCR::post_process_mixcr v", packageVersion("MiXCR"))
+  a("Post processing MiXCR diversity using MiXCR::post_process_mixcr v", packageVersion("PrePostMiXCR"))
   a("")
   a("Diversity metrics are calculated on each chain type seperately.")
   a("NT metrics are by nucleotide sequence")
