@@ -23,7 +23,7 @@ if(!("PrePostMiXCR" %in% rownames(installed.packages())))
 PrePostMiXCR::post_process_mixcr(
   input_file_paths = input_file_paths,
   my_chains = my_chains,
-  output_path = diversity_dir,
+  output_path = output_path,
   sample_data_table = fread(sample_data_path),
   thread_num = 1, # works pretty slow with mutliple cores.  probably memory limited.
   sample_folder_column = "run_accession"
@@ -34,7 +34,7 @@ PrePostMiXCR::post_process_mixcr(
 ## Assembling this package
 In R:
 ``` r
-housekeeping::assemble_package(package_name = "PrePostMiXCR", my_version = "0.0-26",
+housekeeping::assemble_package(package_name = "PrePostMiXCR", my_version = "0.0-27",
   my_dir = "/datastore/alldata/shiny-server/rstudio-common/dbortone/packages/PrePostMiXCR")
 ```
 
@@ -42,9 +42,9 @@ housekeeping::assemble_package(package_name = "PrePostMiXCR", my_version = "0.0-
 In bash:
 ``` bash
 cd /datastore/alldata/shiny-server/rstudio-common/dbortone/packages/PrePostMiXCR
-my_comment="Changed Package name to PrePostMiXCR."
+my_comment="Updated readme."
 git commit -am "$my_comment"; git push origin master
-git tag -a 0.0-26 -m "$my_comment"; git push -u origin --tags
+git tag -a 0.0-27 -m "$my_comment"; git push -u origin --tags
 ```
 
 ## Install
@@ -56,5 +56,5 @@ devtools::install_bitbucket("unc_lineberger/PrePostMiXCR")
 
 Or for a specific version:
 ``` r
-devtools::install_bitbucket("unc_lineberger/PrePostMiXCR", ref = "0.0-26")
+devtools::install_bitbucket("unc_lineberger/PrePostMiXCR", ref = "0.0-27")
 ```
