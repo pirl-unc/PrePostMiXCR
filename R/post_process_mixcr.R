@@ -90,11 +90,11 @@ post_process_mixcr = function(
   
   # sample_data_table = fread(sample_data_path, data.table = F, select = c(sample_id_column, sample_folder_column))
   if(sample_id_column %ni% names(sample_data_table)){
-    error(paste0(sample_id_column, " was not found in sample_data_table."))
+    stop(paste0(sample_id_column, " was not found in sample_data_table."))
   }
   
   if(sample_folder_column %ni% names(sample_data_table)){
-    error(paste0(sample_folder_column, " was not found in sample_data_table."))
+    stop(paste0(sample_folder_column, " was not found in sample_data_table."))
   }
   
   sample_lut = sample_data_table[[sample_id_column]]
