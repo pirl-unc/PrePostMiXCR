@@ -34,7 +34,7 @@ PrePostMiXCR::post_process_mixcr(
 ## Assembling this package
 In R:
 ``` r
-housekeeping::assemble_package(package_name = "PrePostMiXCR", my_version = "0.0-28",
+housekeeping::assemble_package(package_name = "PrePostMiXCR", my_version = "0.0-29",
   my_dir = "/datastore/alldata/shiny-server/rstudio-common/dbortone/packages/PrePostMiXCR")
 ```
 
@@ -42,9 +42,9 @@ housekeeping::assemble_package(package_name = "PrePostMiXCR", my_version = "0.0-
 In bash:
 ``` bash
 cd /datastore/alldata/shiny-server/rstudio-common/dbortone/packages/PrePostMiXCR
-my_comment="Updated readme."
+my_comment="Minor bug fix."
 git commit -am "$my_comment"; git push origin master
-git tag -a 0.0-28 -m "$my_comment"; git push -u origin --tags
+git tag -a 0.0-29 -m "$my_comment"; git push -u origin --tags
 ```
 
 ## Install
