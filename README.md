@@ -18,7 +18,7 @@ input_file_paths = system(paste0("ls ", RAW_DATA_DIR, "/mixcr/sample_output/*/*_
 my_chains = c( "IGH", "IGK", "IGL", "TRA", "TRB", "TRD", "TRG")
 
 if(!("PrePostMiXCR" %in% rownames(installed.packages())))
-  devtools::install_bitbucket("unc_lineberger/PrePostMiXCR")
+  devtools::install_github("Benjamin-Vincent-Lab/PrePostMiXCR")
   
 PrePostMiXCR::post_process_mixcr(
   input_file_paths = input_file_paths,
@@ -51,10 +51,13 @@ git tag -a 0.0-28 -m "$my_comment"; git push -u origin --tags
 Restart R
 In R (local library, packrat library):
 ``` r
-devtools::install_bitbucket("unc_lineberger/PrePostMiXCR")
+devtools::install_github("Benjamin-Vincent-Lab/PrePostMiXCR")
 ```
 
 Or for a specific version:
 ``` r
-devtools::install_bitbucket("unc_lineberger/PrePostMiXCR", ref = "0.0-27")
+devtools::install_github("Benjamin-Vincent-Lab/PrePostMiXCR", ref = "0.0-27")
 ```
+
+## Previous location
+https://bitbucket.org/unc_lineberger/prepostmixcr/src/master/
