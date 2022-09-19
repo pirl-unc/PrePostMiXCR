@@ -42,7 +42,7 @@ housekeeping::assemble_package(package_name = "PrePostMiXCR", my_version = "0.0-
 In bash:
 ``` bash
 cd /datastore/alldata/shiny-server/rstudio-common/dbortone/packages/PrePostMiXCR
-my_comment="Minor bug fix."
+my_comment="git issues."
 git commit -am "$my_comment"; git push origin master
 git tag -a 0.0-29 -m "$my_comment"; git push -u origin --tags
 ```
