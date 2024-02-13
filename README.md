@@ -1,3 +1,5 @@
+* This package was originally hosted at https://github.com/Benjamin-Vincent-Lab/PrePostMiXCR and was moved here on 2/13/2024
+
 Functions for writing commands and post processing the MiXCR pipeline.
 
 Given a sample data matrix that indicates the sample name, sample folder name and input paths
